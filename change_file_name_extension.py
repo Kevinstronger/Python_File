@@ -17,4 +17,12 @@ for filename in files:
 for filelist in os.listdir('.'):
     #对中文文件名重新编码，显示为UTF-8格式
     print filelist.decode('GBK').encode('UTF-8')
+    
+#也可以使用splitext()，返回的是一个元组
+for filename in os.listdir('.'):
+    names = os.path.splitext(filename)
+    
+    if names[1] == '.html':
+        names[0]+'.htm'
+print os.listdir('.')
  
